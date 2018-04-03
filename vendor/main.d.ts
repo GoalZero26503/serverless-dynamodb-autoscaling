@@ -1,23 +1,25 @@
 declare interface Capacity {
-  table: string | string[]
-  index: string | string[]
-  indexOnly?: boolean
-  write?: CapacityConfiguration
-  read?: CapacityConfiguration
+  table: string | string[];
+  index: string | string[];
+  indexOnly?: boolean;
+  write?: CapacityConfiguration;
+  read?: CapacityConfiguration;
 }
 
 declare interface CapacityConfiguration {
-  maximum: number
-  minimum: number
-  usage: number
+  maximum: number;
+  minimum: number;
+  usage: number;
+  scaleIn: number;
+  scaleOut: number;
 }
 
 declare interface Options {
-  index: string
-  region: string
-  service: string
-  stage: string
-  table: string
+  index: string;
+  region: string;
+  service: string;
+  stage: string;
+  table: string;
 }
 
 /**
@@ -26,7 +28,7 @@ declare interface Options {
 declare namespace Serverless {
   namespace Service {
     interface Custom {
-      capacities: Capacity[]
+      capacities: Capacity[];
     }
   }
 }
